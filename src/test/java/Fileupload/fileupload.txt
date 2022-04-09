@@ -1,0 +1,21 @@
+ post request with background with file
+    Scenario: Post demo3
+    Given path '/users'
+    And request {"name":"Monica","job":"leader"}
+     
+    When method POST
+    Then status 201
+     And match response == expectedOutput
+  
+     And print response
+     
+     
+     # post request with background with file with request body
+    Scenario: Post demo4
+    Given path '/users'
+    And request requestBody
+     
+    When method POST
+    Then status 201
+    And match response == expectedOutput
+  
